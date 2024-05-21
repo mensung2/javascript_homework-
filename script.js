@@ -61,15 +61,19 @@ console.log(users);
 // sort는 기존의 데이터를 변경하는 함수입니다. **spread operator로 복사본 생성 후** 진행해보세요.
 // 기존 데이터가 변경되지 않았는지 확인하기 위해 **기존 데이터와 새로운 배열을 모두 콘솔에 출력**해보세요.
 
-// const age = users.sort((a, b) => {
-//   let a = { ...users};
-//   ...a, return b.나이 - a.나이;
-// });
+const userage = [...users];
+userage.sort((a, b) => {
+  return b.나이 - a.나이;
+});
+
+console.log(userage);
+console.log(users);
 
 // 복사본 생성해서 데이터 추가로 변경하는 함수 작성하는 게 어려움.
 // let a = [1, 2, 3]
 // let b = [...a] // b는 새로운 배열
 // 이 상태에서 let c = [...a, 덧붙일 새 배열 값] 하면 배열이 늘어나는데 이건 덧붙이는 거고 원본을 두고 수정해서 내보내는 법이 헷갈림.
+// 2024.05.21. 해결!
 
 //문제7) destructuring (구조 분해 할당) 문법 활용
 
